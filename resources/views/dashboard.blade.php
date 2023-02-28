@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('titulo')
-DashBoard
+Perfil de usuario
 @endsection
 @section('contenido')
 
@@ -8,7 +8,7 @@ DashBoard
     <div class="w-full md:w-8/12 lg:w-6/12 md:flex">
         <div class="md:w-8/12 lg:w-6/12 px-5">
             <p>
-                <img src="" alt="imagen-usuario">
+                <img src="{{asset('img/usuario.png')}}" alt="imagen-usuario">
             </p>
         </div>
         <div class="md:w-8/12 lg:w-6/12 px-5">

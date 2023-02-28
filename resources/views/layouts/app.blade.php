@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Ejemplo - @yield('titulo')</title>
+    <title>CRUD - @yield('titulo')</title>
     <script src="{{asset('js/app.js')}}" defer></script>
 </head>
 
@@ -14,14 +14,13 @@
 
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-black">
-                Ejemplo
+                CRUD
             </h1>
             @auth
             <nav>
                 <a class="font-bold text-gray-500 text-sm">
                     Hola: <span class="font-normal">{{auth()->user()->username}}</span>
                 </a>
-
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
                     <button type="submit" href="{{route('logout')}}" class="font-bold text-gray-500 text-sm">Cerrar
@@ -46,7 +45,7 @@
         @yield('contenido')
     </main>
     <footer class="mt-10 text-center p-5 text-gray-500 font-bold uppercase">
-        Ejemplo - Luis Ortiz {{now()->year}}
+        CRUD - Luis Ortiz {{now()->year}}
     </footer>
 
 </body>

@@ -8,8 +8,7 @@ Inicio se sesión
 <div class="md:flex md:justify-center md:gap-4 md:items-center">
     <div class="md:w-4/12 bg-slate-400 rounded-lg shadow-xl">
         <div>
-            <img src="#" alt="Imagen">
-
+            <img src="{{asset('img/inicio.png')}}" alt="Imagen">
         </div>
     </div>
     <div class="md:w-4/12 bg-white p-10 rounded-lg shadow-xl">

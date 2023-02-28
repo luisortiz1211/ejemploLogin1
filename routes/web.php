@@ -24,9 +24,6 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
-
-//Route::redirect('/', 'login');
-
 Route::get('/registro', [RegisterController::class, 'index'])->name('register.index');
 Route::post('/registro', [RegisterController::class, 'store'])->name('register.store');
 

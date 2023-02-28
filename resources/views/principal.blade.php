@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('titulo')
-principal
+Publicaciones
 @endsection
 @section('contenido')
-va algo
+Aqui van las publicaciones
 @endsection
