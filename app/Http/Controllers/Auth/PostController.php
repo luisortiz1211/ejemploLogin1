@@ -11,7 +11,8 @@ class PostController extends Controller
 {
     public function index(User $user)
     {
-        return view('dashboard', ['user' => $user]);
+        $post = Post::where('user_id', $user->id)->simplePaginate(4);
+        return view('dashboard', ['user' => $user, 'posts' => $post]);
     }
     public function create()
     {
@@ -25,7 +26,13 @@ class PostController extends Controller
             'description' => 'required|max:200',
             'image' => 'required'
         ]);
-        Post::create([
+        // Post::create([
+        //     'title' => $request->title,
+        //     'description' => $request->description,
+        //     'image' => $request->image,
+        //     'user_id' => auth()->user()->id
+        // ]);
+        $request->user()->posts()->create([
             'title' => $request->title,
             'description' => $request->description,
             'image' => $request->image,
@@ -33,5 +40,10 @@ class PostController extends Controller
         ]);
 
         return redirect()->route('post.index', auth()->user()->username);
+    }
+
+    public function show(Post $post)
+    {
+        return view('post.show', ['post' => $post]);
     }
 }
