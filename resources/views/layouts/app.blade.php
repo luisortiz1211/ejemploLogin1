@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @stack('styles')
     <title>CRUD - @yield('titulo')</title>
     <script src="{{asset('js/app.js')}}" defer></script>
 </head>
@@ -18,9 +19,15 @@
             </h1>
             @auth
             <nav>
-                <a class="font-bold text-gray-500 text-sm">
+                <a href="{{route('post.create')}}"
+                    class="flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer">
+                    Crear
+                </a>
+
+                <a href="{{route('post.index',auth()->user()->username)}}" class="font-bold text-gray-500 text-sm">
                     Hola: <span class="font-normal">{{auth()->user()->username}}</span>
                 </a>
+
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
                     <button type="submit" href="{{route('logout')}}" class="font-bold text-gray-500 text-sm">Cerrar
